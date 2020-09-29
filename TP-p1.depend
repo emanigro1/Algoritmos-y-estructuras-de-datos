@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1599606046 source:c:\users\usuario\documents\universidad\segundo año\segundo cuatrimestre\algotimos y estructura de datos\c++\tp-p1\main.cpp
+	<iostream>
+	<conio.h>
+	"TDA.h"
+
+1599607641 c:\users\usuario\documents\universidad\segundo año\segundo cuatrimestre\algotimos y estructura de datos\c++\tp-p1\tda.h
+
+1599664874 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\ayed\main.cpp
+	<iostream>
+	<conio.h>
+	"TDA.h"
+
+1599664844 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\ayed\tda.h
+
+1599665597 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\ayed\tda.cpp
+	<iostream>
+	<string.h>
+	"TDA.h"
+
+1600882990 source:c:\users\peqe_\desktop\ayed\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"TDA.h"
+	<fstream>
+
+1600814951 c:\users\peqe_\desktop\ayed\tda.h
+
+1600875356 source:c:\users\peqe_\desktop\ayed\tda.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+	"TDA.h"
+
+1600472038 c:\users\peqe_\desktop\ayed\nodo.h
+
+1600882990 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\uni-tp\ayed\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"TDA.h"
+	<fstream>
+
+1600814951 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\uni-tp\ayed\tda.h
+
+1600875356 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\uni-tp\ayed\tda.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+	"TDA.h"
+
+1600733346 source:d:\uni-tp\ayed\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<cstdlib>
+	<conio.h>
+	"TDA.h"
+	<fstream>
+
+1600733064 d:\uni-tp\ayed\tda.h
+
+1600733328 source:d:\uni-tp\ayed\tda.cpp
+	<iostream>
+	<string.h>
+	"TDA.h"
+
