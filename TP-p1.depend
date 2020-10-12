@@ -71,3 +71,33 @@
 	<string.h>
 	"TDA.h"
 
+1602474179 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos-master\algoritmos-y-estructuras-de-datos-master\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"TDA.h"
+	"ListaSucursales.h"
+	<fstream>
+
+1602473628 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos-master\algoritmos-y-estructuras-de-datos-master\tda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1602474178 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos-master\algoritmos-y-estructuras-de-datos-master\tda.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+	"TDA.h"
+
+1602473664 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos-master\algoritmos-y-estructuras-de-datos-master\listasucursales.cpp
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<stdlib.h>
+
+1602027304 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos-master\algoritmos-y-estructuras-de-datos-master\listasucursales.h
+	"TDA.h"
+

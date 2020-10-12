@@ -4,18 +4,19 @@
 #include <string.h>
 #include <conio.h>
 #include "TDA.h"
+#include "ListaSucursales.h"
 #include <fstream>
 
 
 
-struct nodo
+/*struct nodo
 {
     EstructuraSucursales* sucursal=new EstructuraSucursales;
     nodo *siguiente;
 
-}*primero,*ultimo;
+}*primero,*ultimo;*/
 
-void insertarNodo();
+/*void insertarNodo();
 void mostrarLista();
 void eliminarSucursal();
 void modificarSucursal();
@@ -23,7 +24,9 @@ void buscarSucursar();
 void cargarDatos();
 //void leer(char texto[50],char delimitador,struct nodo *nodos);
 void insertarNodoCnStruct(int contarSucursales, char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5]);
+*/
 
+void cargarDatos(Listaenc* miLista);
 void menu();
 
 using namespace std;
@@ -43,24 +46,28 @@ using namespace std;
 
 int main()
 {
+   // EstructuraSucursales* Sucursal1 = new EstructuraSucursales("0034","Buenos Aires",50, 47.53, 18.5, "0012");
+    //mostrarSucursal(Sucursal1);
+    /*Nodo* Sucursal = new Nodo();
+
+
+    insertarLista(Nodo);
+    delete Sucursal1;*/
     menu();
     return 0;
 }
-
 
 void menu()
 {
     int opcion;
 
+    Listaenc* miLista = crearLista();
     do
     {
         cout<<"Bienvenido al administrador de sucursales\n";
         cout<<"Elija un numero de opcion:\n\n" ;
-        cout<<"1. Agregar sucursal. \n";
         cout<<"2. Mostrar sucursales.\n";
         cout<<"3. Buscar sucursar por ID.\n";
-        cout<<"4. Modificar sucursal.\n";
-        cout<<"5. Eliminar sucursal.\n";
         cout<<"6. Cargar datos del txt.\n\n";
         cout<<"0. Salir\n\n";
 
@@ -70,28 +77,26 @@ void menu()
         switch(opcion)
         {
         case 1:
-            insertarNodo();
+            ;
             break;
 
-        case 2:
-
-            mostrarLista();
-            break;
+        case 2: imprimir(miLista);
+                break;
 
         case 3:
-            buscarSucursar();
+            //buscarSucursar();
             break;
 
         case 4:
-            modificarSucursal();
+            //modificarSucursal();
             break;
 
         case 5:
-            eliminarSucursal();
+            //eliminarSucursal();
             break;
 
         case 6:
-            cargarDatos();
+            cargarDatos(miLista);
             break;
 
         case 0:
@@ -108,7 +113,7 @@ void menu()
          cout<<"\nHasta luego!!\n";
     }
 }
-
+/*
 void insertarNodo()
 {
     system("cls");
@@ -366,8 +371,8 @@ void buscarSucursar()
         system ("pause");
     system("cls");
 }
-
-void cargarDatos(){
+*/
+void cargarDatos(Listaenc* miLista){
     ifstream archivo;
     string texto;
     int cont = 0;
@@ -377,7 +382,9 @@ void cargarDatos(){
     float montoMensual,metrosCuadrados;
     char provincia[20],numeroCasaMatriz[5],codigo[5];
     char CasaAux[50],CodAux[50];
+    int a = 0;
     ///
+    //Listaenc* miLista1 = crearLista();
 
     archivo.open("ejemplo-sucursales.txt",ios::in);
 
@@ -420,8 +427,11 @@ void cargarDatos(){
         }
         if(cont == 5)
             {
-                insertarNodoCnStruct(contSucursales,codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
+                //insertarNodoCnStruct(contSucursales,codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
+                EstructuraSucursales* Sucursal = new EstructuraSucursales(codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
+                insertar(miLista,Sucursal,a);
                 contSucursales++;
+                a++;
                 cont = -1;
             }
         cont++;
@@ -429,7 +439,7 @@ void cargarDatos(){
         archivo.close();
 
 }
-
+/*
 void insertarNodoCnStruct(int contarSucursales, char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5])
 {
     system("cls");
@@ -487,5 +497,6 @@ void leer(char texto[50],char delimitador,struct nodo *nodos){
     strcpy("",aux);
 
 }*/
+
 
 

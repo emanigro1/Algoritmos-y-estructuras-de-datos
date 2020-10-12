@@ -21,6 +21,39 @@ void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[2
     setCasaMatriz(sucur,casa_matriz);
 }
 
+/*EstructuraSucursales* crearSucursal(){
+
+    //EstructuraSucursales* sucursal = new EstructuraSucursales("0034","Buenos Aires",50, 47.53, 18.5, "0012");
+
+    char auxCaracter[20]= "";
+    int auxNumerico = 0;
+
+    fflush(stdin);
+    cout<<"Ingrese el codigo de su empresa: "<<endl;
+    gets(auxCaracter);
+    strcpy(sucursal->codigo,auxCaracter);
+
+    fflush(stdin);
+    cout<<"Ingrese la provincia: "<<endl;
+    gets(auxCaracter);
+    strcpy(sucursal->provincia,auxCaracter);
+
+    cout<<"ingrese la cantidad de articulos: "<<endl;
+    cin>>sucursal->cantidad_articulos;
+
+    cout<<"ingrese el monto mensual: "<<endl;
+    cin>>sucursal->monto_mensual;
+
+    cout<<"ingrese los metros cuadrados: "<<endl;
+    cin>>sucursal->m_cuadrados;
+
+    cout<<"ingrese la casa matriz: "<<endl;
+    cin>>sucursal->casa_matriz;
+
+    return sucursal;
+
+}*/
+
 void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5])
 {
     strcpy(sucur->codigo,codigo);
@@ -93,7 +126,7 @@ void setCasaMatriz(EstructuraSucursales* sucur, char NewCasaMatriz[5])
 void mostrarSucursal (EstructuraSucursales* sucur)
 {
     cout<<"\n-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n";
-    cout<<"Codigo Sucursar: "<<sucur->codigo<<endl;
+    cout<<"Codigo Sucursal: "<<sucur->codigo<<endl;
     cout<<"Provincia: "<<sucur->provincia<<endl;
     cout<<"Cantidad de Articulos Vendidos: "<<sucur->cantidad_articulos<<endl;
     cout<<"Monto Mensual: "<<sucur->monto_mensual<<endl;

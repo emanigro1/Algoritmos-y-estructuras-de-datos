@@ -1,5 +1,8 @@
 #ifndef TDA_H_INCLUDED
 #define TDA_H_INCLUDED
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 struct EstructuraSucursales
 {
@@ -9,11 +12,20 @@ struct EstructuraSucursales
     float monto_mensual;
     float m_cuadrados;
     char casa_matriz[5];
+
+    EstructuraSucursales(char codigoInput[5],char provinciaInput[20],int articulosInput, float montoMensualInput, float mCuadradosInput, char casa_matrizInput[5]){
+        strcpy(codigo,codigoInput);
+        strcpy(provincia,provinciaInput);
+        cantidad_articulos = articulosInput;
+        monto_mensual = montoMensualInput;
+        m_cuadrados = mCuadradosInput;
+        strcpy(casa_matriz,casa_matrizInput);
+    }
 };
 
 //typedef struct EstructuraSucursales* Sucursal;
 
-void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[20],int Articulos, float MontoMensual, float mCuadrados, char casa_matriz[5]);
+//void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[20],int Articulos, float MontoMensual, float mCuadrados, char casa_matriz[5]);
 void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5]);
 
 void destruirSucursal(EstructuraSucursales* sucur);
