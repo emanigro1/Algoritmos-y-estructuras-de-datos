@@ -101,7 +101,21 @@
 1602027304 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos-master\algoritmos-y-estructuras-de-datos-master\listasucursales.h
 	"TDA.h"
 
-1602691608 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
+1602628159 source:c:\users\peqe_\downloads\algoritmos-y-estructuras-de-datos-master\listasucursales.cpp
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<stdlib.h>
+
+1602027304 c:\users\peqe_\downloads\algoritmos-y-estructuras-de-datos-master\listasucursales.h
+	"TDA.h"
+
+1602473628 c:\users\peqe_\downloads\algoritmos-y-estructuras-de-datos-master\tda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1602474179 source:c:\users\peqe_\downloads\algoritmos-y-estructuras-de-datos-master\main.cpp
 	<iostream>
 	<stdlib.h>
 	<stdio.h>
@@ -111,23 +125,9 @@
 	"ListaSucursales.h"
 	<fstream>
 
-1602691608 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1602691608 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.h
-	"TDA.h"
-
-1602691608 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.cpp
+1602474178 source:c:\users\peqe_\downloads\algoritmos-y-estructuras-de-datos-master\tda.cpp
 	<iostream>
 	<conio.h>
 	<string.h>
 	"TDA.h"
-
-1602691608 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
-	"ListaSucursales.h"
-	"TDA.h"
-	<iostream>
-	<stdlib.h>
 
