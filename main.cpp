@@ -26,6 +26,7 @@ void cargarDatos();
 void insertarNodoCnStruct(int contarSucursales, char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5]);
 */
 
+void ordenarNacionalFacturacion(Listaenc* miLista);
 void cargarDatos(Listaenc* miLista);
 void menu();
 
@@ -46,13 +47,14 @@ using namespace std;
 
 int main()
 {
-   // EstructuraSucursales* Sucursal1 = new EstructuraSucursales("0034","Buenos Aires",50, 47.53, 18.5, "0012");
+    // EstructuraSucursales* Sucursal1 = new EstructuraSucursales("0034","Buenos Aires",50, 47.53, 18.5, "0012");
     //mostrarSucursal(Sucursal1);
     /*Nodo* Sucursal = new Nodo();
 
 
     insertarLista(Nodo);
     delete Sucursal1;*/
+
     menu();
     return 0;
 }
@@ -62,10 +64,12 @@ void menu()
     int opcion;
 
     Listaenc* miLista = crearLista();
+    Listaenc* facturacionNacional= crearLista();
     do
     {
         cout<<"Bienvenido al administrador de sucursales\n";
         cout<<"Elija un numero de opcion:\n\n" ;
+        cout<<"1. Ordenar por facturacion nacional.\n";
         cout<<"2. Mostrar sucursales.\n";
         cout<<"3. Buscar sucursar por ID.\n";
         cout<<"6. Cargar datos del txt.\n\n";
@@ -77,11 +81,12 @@ void menu()
         switch(opcion)
         {
         case 1:
-            ;
+            ordenarNacionalFacturacion(miLista);
             break;
 
-        case 2: imprimir(miLista);
-                break;
+        case 2:
+            imprimir(miLista);
+            break;
 
         case 3:
             //buscarSucursar();
@@ -108,9 +113,10 @@ void menu()
         }
     }
     while(opcion!=0);
-    if(opcion==0){
-         system("cls");
-         cout<<"\nHasta luego!!\n";
+    if(opcion==0)
+    {
+        system("cls");
+        cout<<"\nHasta luego!!\n";
     }
 }
 /*
@@ -372,7 +378,8 @@ void buscarSucursar()
     system("cls");
 }
 */
-void cargarDatos(Listaenc* miLista){
+void cargarDatos(Listaenc* miLista)
+{
     ifstream archivo;
     string texto;
     int cont = 0;
@@ -388,57 +395,93 @@ void cargarDatos(Listaenc* miLista){
 
     archivo.open("ejemplo-sucursales.txt",ios::in);
 
-    if(archivo.fail()){
+    if(archivo.fail())
+    {
         cout<<"No se puede abrir el archivo";
         exit(1);
     }
-       while(archivo >> ws,getline(archivo,texto,'-')){
+    while(archivo >> ws,getline(archivo,texto,'-'))
+    {
 
         switch(cont)
         {
-            case 0:
-                    //texto.resize(4);
-                    strcpy(codigo,texto.c_str());
-                    //strcpy(CodAux,aux);
+        case 0:
+            //texto.resize(4);
+            strcpy(codigo,texto.c_str());
+            //strcpy(CodAux,aux);
             break;
 
-            case 1: strcpy(provincia,texto.c_str());
-                    //strcpy(provincia,aux);
-                    //strcpy("",aux);
-                    //cout<<provincia<<endl;
+        case 1:
+            strcpy(provincia,texto.c_str());
+            //strcpy(provincia,aux);
+            //strcpy("",aux);
+            //cout<<provincia<<endl;
             break;
 
-            case 2: articulos = atoi(texto.c_str());
-                    //cout<<articulos<<endl;
+        case 2:
+            articulos = atoi(texto.c_str());
+            //cout<<articulos<<endl;
             break;
 
-            case 3: montoMensual = atof(texto.c_str());
-                    //cout<<montoMensual<<endl;
+        case 3:
+            montoMensual = atof(texto.c_str());
+            //cout<<montoMensual<<endl;
             break;
 
-            case 4: metrosCuadrados = atof(texto.c_str());
-                    //cout<<metrosCuadrados<<endl;
+        case 4:
+            metrosCuadrados = atof(texto.c_str());
+            //cout<<metrosCuadrados<<endl;
             break;
 
-            case 5: //strcpy(CodAux,texto.c_str());
-                    strcpy(numeroCasaMatriz,texto.c_str());
-                    //cout<<numeroCasaMatriz<<endl;
+        case 5: //strcpy(CodAux,texto.c_str());
+            strcpy(numeroCasaMatriz,texto.c_str());
+            //cout<<numeroCasaMatriz<<endl;
             break;
         }
         if(cont == 5)
-            {
-                //insertarNodoCnStruct(contSucursales,codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
-                EstructuraSucursales* Sucursal = new EstructuraSucursales(codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
-                insertar(miLista,Sucursal,a);
-                contSucursales++;
-                a++;
-                cont = -1;
-            }
-        cont++;
+        {
+            //insertarNodoCnStruct(contSucursales,codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
+            EstructuraSucursales* Sucursal = new EstructuraSucursales(codigo,provincia,articulos,montoMensual,metrosCuadrados,numeroCasaMatriz);
+            insertar(miLista,Sucursal,a);
+            contSucursales++;
+            a++;
+            cont = -1;
         }
-        archivo.close();
+        cont++;
+    }
+    archivo.close();
 
 }
+
+void ordenarNacionalFacturacion(Listaenc* miLista)
+{
+    int tamanioLista,i,j;
+    obtenerTamanio(miLista,&tamanioLista);
+    EstructuraSucursales* auxiliar;
+    EstructuraSucursales* sucursal[tamanioLista];
+
+    for(i=0; i<tamanioLista; i++)
+    {
+        obtenerElemento(miLista,&sucursal[i],i);
+    }
+
+    for(i=0; i<tamanioLista; i++)
+    {
+        for(j=0; j<tamanioLista; j++)
+        {
+            if(sucursal[i]->monto_mensual>sucursal[j]->monto_mensual)
+            {
+                auxiliar=sucursal[i];
+                sucursal[i]=sucursal[j];
+                sucursal[j]=auxiliar;
+            }
+        }
+    }
+    for(i=0;i<tamanioLista;i++){
+        mostrarSucursal(sucursal[i]);
+    }
+}
+
 /*
 void insertarNodoCnStruct(int contarSucursales, char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5])
 {
