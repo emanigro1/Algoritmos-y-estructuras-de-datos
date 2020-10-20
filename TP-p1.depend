@@ -131,7 +131,7 @@
 	<string.h>
 	"TDA.h"
 
-1603213405 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
+1603219728 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
 	"ListaSucursales.h"
 	"TDA.h"
 	<iostream>
@@ -145,7 +145,7 @@
 	<stdlib.h>
 	<string.h>
 
-1603218609 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
+1603233897 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
 	<iostream>
 	<stdlib.h>
 	<stdio.h>

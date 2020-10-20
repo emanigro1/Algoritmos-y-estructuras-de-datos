@@ -6,9 +6,6 @@
 #include "TDA.h"
 #include "ListaSucursales.h"
 #include <fstream>
-
-
-
 /*struct nodo
 {
     EstructuraSucursales* sucursal=new EstructuraSucursales;
@@ -25,8 +22,10 @@ void cargarDatos();
 //void leer(char texto[50],char delimitador,struct nodo *nodos);
 void insertarNodoCnStruct(int contarSucursales, char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5]);
 */
+const char *provincias[23]= {"Misiones","Buenos Aires","Catamarca","Jujuy","San Luis","San Juan","Chaco","Chubut","Cordoba","Corriente","Entre Rios","Formosa","La Pampa", "La Rioja", "Mendoza","Neuquen","Rio Negro","Salta","Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra de Fuego", "Tucuman"};
 
 void ordenarNacionalFacturacion(Listaenc* miLista);
+void ordenarProvinciaFacturacion(Listaenc* miLista);
 void cargarDatos(Listaenc* miLista);
 void menu();
 
@@ -69,9 +68,9 @@ void menu()
     {
         cout<<"Bienvenido al administrador de sucursales\n";
         cout<<"Elija un numero de opcion:\n\n" ;
-        cout<<"1. Ordenar por facturacion nacional.\n";
-        cout<<"2. Mostrar sucursales.\n";
-        cout<<"3. Buscar sucursar por ID.\n";
+        cout<<"1. Facturacion Nacional.\n";
+        cout<<"2. Facturacion Provincial.\n";
+        cout<<"3. Mostrar sucursales.\n";
         cout<<"6. Cargar datos del txt.\n\n";
         cout<<"0. Salir\n\n";
 
@@ -85,19 +84,10 @@ void menu()
             break;
 
         case 2:
-            imprimir(miLista);
+            ordenarProvinciaFacturacion(miLista);
             break;
-
         case 3:
-            //buscarSucursar();
-            break;
-
-        case 4:
-            //modificarSucursal();
-            break;
-
-        case 5:
-            //eliminarSucursal();
+            imprimir(miLista);
             break;
 
         case 6:
@@ -110,6 +100,8 @@ void menu()
 
         default:
             cout<<"Opcion no encontrada \n";
+            system ("pause");
+            system("cls");
         }
     }
     while(opcion!=0);
@@ -450,6 +442,9 @@ void cargarDatos(Listaenc* miLista)
         cont++;
     }
     archivo.close();
+    cout<<"Archivo cargado con exito"<<endl;
+    system ("pause");
+    system("cls");
 
 }
 
@@ -477,9 +472,53 @@ void ordenarNacionalFacturacion(Listaenc* miLista)
             }
         }
     }
-    for(i=0;i<tamanioLista;i++){
+    for(i=0; i<tamanioLista; i++)
+    {
         mostrarSucursal(sucursal[i]);
     }
+    system ("pause");
+    system("cls");
+}
+
+void ordenarProvinciaFacturacion(Listaenc* miLista)
+{
+    int tamanioLista,i,j;
+    obtenerTamanio(miLista,&tamanioLista);
+    EstructuraSucursales* auxiliar;
+    EstructuraSucursales* sucursal[tamanioLista];
+
+    for(i=0; i<tamanioLista; i++)
+    {
+        obtenerElemento(miLista,&sucursal[i],i);
+    }
+
+    for(i=0; i<tamanioLista; i++)
+    {
+
+        for(j=0; j<tamanioLista; j++)
+        {
+            if(sucursal[i]->monto_mensual>sucursal[j]->monto_mensual)
+            {
+                auxiliar=sucursal[i];
+                sucursal[i]=sucursal[j];
+                sucursal[j]=auxiliar;
+            }
+
+        }
+    }
+    for(i=0; i<23; i++)
+    {
+        cout<<endl<<provincias[i]<<endl;
+        for(j=0; j<tamanioLista; j++)
+        {
+            if(strcmp(provincias[i], sucursal[j]->provincia)==0)
+            {
+                mostrarSucursal(sucursal[j]);
+            }
+        }
+    }
+    system ("pause");
+    system("cls");
 }
 
 /*
