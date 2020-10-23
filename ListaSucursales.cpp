@@ -91,11 +91,6 @@ int insertar(Listaenc* lista,EstructuraSucursales * sucursal, int pos)
     return OK;
 }
 
-int insertarFin(Listaenc* lista, EstructuraSucursales * sucursal)
-{
-    return insertar(lista, sucursal, lista->tam);
-}
-
 int removerInicio(Listaenc* lista, EstructuraSucursales * sucursal)
 {
     if (lista == NULL)
@@ -149,11 +144,6 @@ int remover(Listaenc* lista, EstructuraSucursales * sucursal, int pos)
     return OK;
 }
 
-int removerFin(Listaenc* lista, EstructuraSucursales * sucursal)
-{
-    return remover(lista, sucursal, lista->tam - 1);
-}
-
 int obtenerElemento(Listaenc* lista, EstructuraSucursales** sucursal, int pos)
 {
     if (lista == NULL)
@@ -193,7 +183,7 @@ void imprimir(Listaenc* lista)
 {
     if(lista->inicio==NULL)
     {
-        cout<<endl<<"No hay datos cargados"<<endl;
+        cout<<endl<<"No hay datos cargados"<<endl<<endl;
     }
     else
     {    system("cls");
@@ -214,50 +204,3 @@ void imprimir(Listaenc* lista)
     system("cls");
 }
 
-void agregarLista(ListaSucursales *&lista,EstructuraSucursales * sucursales)
-{
-    ListaSucursales *nueva_Sucursal = new ListaSucursales;//Creo un espacio para la lista
-    nueva_Sucursal->sucursales = sucursales;
-    nueva_Sucursal ->siguiente = NULL;
-
-    /*if(head == NULL)
-    {
-        head = nueva_Sucursal;
-        tail = nueva_Sucursal;
-        nueva_Sucursal = NULL;
-    }
-    else
-    {
-        tail->siguiente=nueva_Sucursal;
-        tail=nueva_Sucursal;
-    }*/
-    /*ListaSucursales *aux1 = lista;//
-    ListaSucursales *aux2;
-
-    while(aux1 != NULL){
-        aux2 = aux1;
-        aux1 = aux1->siguiente;
-    }
-
-    if(lista == aux1){
-        lista = nueva_Sucursal;
-    }
-    else{
-        aux2->siguiente = nueva_Sucursal;
-    }
-    nueva_Sucursal->siguiente = aux1;*/
-
-}
-
-void mostrarLista(ListaSucursales *lista)
-{
-    ListaSucursales *actual = new ListaSucursales();
-    actual = lista;
-    if(actual == NULL)cout<<"La lista esta vacia"<<endl;
-    while(actual != NULL)
-    {
-        mostrarSucursal(actual->sucursales);
-        actual = actual->siguiente;
-    }
-
-}

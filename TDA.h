@@ -23,9 +23,6 @@ struct EstructuraSucursales
     }
 };
 
-//typedef struct EstructuraSucursales* Sucursal;
-
-//void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[20],int Articulos, float MontoMensual, float mCuadrados, char casa_matriz[5]);
 void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5]);
 
 void destruirSucursal(EstructuraSucursales* sucur);

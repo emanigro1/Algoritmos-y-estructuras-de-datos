@@ -30,22 +30,13 @@ int estaVacia(Listaenc* lista);
 
 int insertarInicio(Listaenc* lista,EstructuraSucursales * sucursal);
 int insertar(Listaenc* lista,EstructuraSucursales * sucursal, int pos);
-int insertarFin(Listaenc* lista, EstructuraSucursales * sucursal);
 
 int removerInicio(Listaenc* lista, EstructuraSucursales * sucursal);
 int remover(Listaenc* lista, EstructuraSucursales * sucursal, int pos);
-int removerFin(Listaenc* lista, EstructuraSucursales * sucursal);
 
 int obtenerTamanio(Listaenc* lista, int* tam);
 int obtenerElemento(Listaenc* lista, EstructuraSucursales** sucursal, int pos);
 
 void imprimir(Listaenc* lista);
-
-ListaSucursales* crearSucur(EstructuraSucursales * sucursal,ListaSucursales* proximo);
-void agregarLista(ListaSucursales *&lista,EstructuraSucursales * sucursales);  ///Los parametros dicen que necesito un puntero a una lista y otro a una estructura
-void mostrarLista(ListaSucursales *lista);
-
-
-
 
 #endif // LISTAENSUCURSALES_H_INCLUDED
