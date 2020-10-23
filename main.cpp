@@ -26,6 +26,8 @@ const char *provincias[23]= {"Misiones","Buenos Aires","Catamarca","Jujuy","San 
 
 void ordenarNacionalFacturacion(Listaenc* miLista);
 void ordenarProvinciaFacturacion(Listaenc* miLista);
+void ordenarNacionalCantArt(Listaenc* miLista);
+void ordenarProvinciaCantArt(Listaenc* miLista);
 void cargarDatos(Listaenc* miLista);
 void menu();
 
@@ -69,6 +71,7 @@ void menu()
         cout<<"Bienvenido al administrador de sucursales\n";
         cout<<"Elija un numero de opcion:\n\n" ;
         cout<<"1. Listar por facturacion.\n";
+        cout<<"2. Ranking cantidad articulos vendidos.\n";
         cout<<"3. Mostrar sucursales.\n";
         cout<<"6. Cargar datos del txt.\n\n";
         cout<<"0. Salir\n\n";
@@ -100,9 +103,28 @@ void menu()
             {  system("cls");
                 break;
             }
+    case 2:
 
+            cout<<endl<<"1. Nacional"<<endl;
+            cout<<"2. Provincial"<<endl;
 
+            cout<<endl<<"Opcion: ";
+            cin>>opcion;
 
+            if(opcion==1)
+            {
+                ordenarNacionalCantArt(miLista);
+                break;
+            }
+            else if(opcion==2)
+            {
+                ordenarProvinciaCantArt(miLista);
+                break;
+            }
+            else
+            {  system("cls");
+                break;
+            }
 
         case 3:
 
@@ -631,5 +653,93 @@ void leer(char texto[50],char delimitador,struct nodo *nodos){
 }*/
 
 
+void ordenarNacionalCantArt(Listaenc* miLista)
+{
+    if(miLista->inicio==NULL)
+    {
+        cout<<endl<<"No hay datos cargados"<<endl<<endl;
 
+    }
+    else
+    {
+        system("cls");
+        int tamanioLista,i,j;
+        obtenerTamanio(miLista,&tamanioLista);
+        EstructuraSucursales* auxiliar;
+        EstructuraSucursales* sucursal[tamanioLista];
+
+        for(i=0; i<tamanioLista; i++)
+        {
+            obtenerElemento(miLista,&sucursal[i],i);
+        }
+
+        for(i=0; i<tamanioLista; i++)
+        {
+            for(j=0; j<tamanioLista; j++)
+            {
+                if(sucursal[i]->cantidad_articulos>sucursal[j]->cantidad_articulos)
+                {
+                    auxiliar=sucursal[i];
+                    sucursal[i]=sucursal[j];
+                    sucursal[j]=auxiliar;
+                }
+            }
+        }
+        for(i=0; i<tamanioLista; i++)
+        {
+            mostrarSucursal(sucursal[i]);
+        }
+    }
+    system ("pause");
+    system("cls");
+}
+
+void ordenarProvinciaCantArt(Listaenc* miLista)
+{
+    if(miLista->inicio==NULL)
+    {
+        cout<<endl<<"No hay datos cargados"<<endl<<endl;
+    }
+    else
+    {
+        system("cls");
+        int tamanioLista,i,j;
+        obtenerTamanio(miLista,&tamanioLista);
+        EstructuraSucursales* auxiliar;
+        EstructuraSucursales* sucursal[tamanioLista];
+
+        for(i=0; i<tamanioLista; i++)
+        {
+            obtenerElemento(miLista,&sucursal[i],i);
+        }
+
+        for(i=0; i<tamanioLista; i++)
+        {
+            for(j=0; j<tamanioLista; j++)
+            {
+                if(sucursal[i]->cantidad_articulos>sucursal[j]->cantidad_articulos)
+                {
+                    auxiliar=sucursal[i];
+                    sucursal[i]=sucursal[j];
+                    sucursal[j]=auxiliar;
+                }
+            }
+        }
+        float totalProvincias;
+        for(i=0; i<23; i++)
+        {
+            cout<<endl<<provincias[i]<<": "<<endl;
+
+            for(j=0; j<tamanioLista; j++)
+            {
+                if(strcmp(provincias[i], sucursal[j]->provincia)==0)
+                {
+                    mostrarSucursal(sucursal[j]);
+                }
+            }cout<<endl<<"___________________________________________"<<endl;
+        }
+    }
+    system ("pause");
+    system("cls");
+}
 
