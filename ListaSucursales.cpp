@@ -191,18 +191,25 @@ int obtenerTamanio(Listaenc* lista, int* tam)
 
 void imprimir(Listaenc* lista)
 {
-    int qtdeElementos;
-    obtenerTamanio(lista, &qtdeElementos);
-
-    EstructuraSucursales * dato;
-
-    for(int i = 0; i < qtdeElementos; i++)
+    if(lista->inicio==NULL)
     {
-        obtenerElemento(lista, &dato, i);
-        mostrarSucursal(dato);
-
+        cout<<endl<<"No hay datos cargados"<<endl;
     }
-    cout<<endl;
+    else
+    {    system("cls");
+        int qtdeElementos;
+        obtenerTamanio(lista, &qtdeElementos);
+
+        EstructuraSucursales * dato;
+
+        for(int i = 0; i < qtdeElementos; i++)
+        {
+            obtenerElemento(lista, &dato, i);
+            mostrarSucursal(dato);
+
+        }
+        cout<<endl;
+    }
     system ("pause");
     system("cls");
 }
