@@ -11,19 +11,19 @@ struct EstructuraSucursales
     int cantidad_articulos;
     float monto_mensual;
     float m_cuadrados;
-    char casa_matriz[5];
+    int casa_matriz;
 
-    EstructuraSucursales(char codigoInput[5],char provinciaInput[20],int articulosInput, float montoMensualInput, float mCuadradosInput, char casa_matrizInput[5]){
+    EstructuraSucursales(char codigoInput[5],char provinciaInput[20],int articulosInput, float montoMensualInput, float mCuadradosInput, int casa_matrizInput){
         strcpy(codigo,codigoInput);
         strcpy(provincia,provinciaInput);
         cantidad_articulos = articulosInput;
         monto_mensual = montoMensualInput;
         m_cuadrados = mCuadradosInput;
-        strcpy(casa_matriz,casa_matrizInput);
+        casa_matriz=casa_matrizInput;
     }
 };
 
-void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5]);
+void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados,int casa_matriz);
 
 void destruirSucursal(EstructuraSucursales* sucur);
 
@@ -42,8 +42,8 @@ void setMontoMensual (EstructuraSucursales* sucur, float NewMontoMensual);
 float getMCuadrados(EstructuraSucursales* sucur);
 void setMCuadrados (EstructuraSucursales* sucur,float NewMetros);
 
-char *getCasaMatriz(EstructuraSucursales* sucur);
-void setCasaMatriz(EstructuraSucursales* sucur, char NewCasaMatriz[5]);
+int getCasaMatriz(EstructuraSucursales* sucur);
+void setCasaMatriz(EstructuraSucursales* sucur, int NewCasaMatriz);
 
 void mostrarSucursal (EstructuraSucursales* sucur);
 

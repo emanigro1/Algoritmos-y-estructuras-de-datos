@@ -66,7 +66,7 @@ int insertar(Listaenc* lista,EstructuraSucursales * sucursal, int pos)
     if (pos < 0 || pos > lista->tam)
         return INDICE_INVALIDO;
 
-    ListaSucursales *novoNo;
+    ListaSucursales *nuevoNo;
     if (pos == 0)
     {
         return insertarInicio(lista, sucursal);
@@ -82,10 +82,10 @@ int insertar(Listaenc* lista,EstructuraSucursales * sucursal, int pos)
         }
 
         // adiciona o nó
-        novoNo = novoNo = crearSucur(sucursal, aux->siguiente);
-        if (novoNo == NULL)
+        nuevoNo = nuevoNo = crearSucur(sucursal, aux->siguiente);
+        if (nuevoNo == NULL)
             return ESTRUCTURA_NO_INICIALIZADA;
-        aux->siguiente = novoNo;
+        aux->siguiente = nuevoNo;
     }
     lista->tam++;
     return OK;
@@ -181,7 +181,7 @@ int obtenerTamanio(Listaenc* lista, int* tam)
 
 void imprimir(Listaenc* lista)
 {
-    if(lista->inicio==NULL)
+    if(estaVacia(lista))
     {
         cout<<endl<<"No hay datos cargados"<<endl<<endl;
     }
