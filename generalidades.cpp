@@ -16,12 +16,10 @@ void cargarDatos(Listaenc* miLista)
         ifstream archivo;
         string texto;
         int cont = 0;
-        ///Tipos de datos del nodo
         int articulos,n;
         float montoMensual,metrosCuadrados;
         char provincia[20],numeroCasaMatriz[5],codigo[5];
         int posicion = 0;
-        ///
 
         archivo.open("ejemplo-sucursales.txt",ios::in);
 
