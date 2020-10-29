@@ -7,7 +7,7 @@ using namespace std;
 
 struct EstructuraSucursales;
 
-void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[20],int Articulos, float MontoMensual, float mCuadrados, int casa_matriz)
+void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[20],int Articulos, float MontoMensual, float mCuadrados, char casa_matriz[5])
 {
     setCodigo(sucur,codigo);
     setProvincia(sucur,Provincia);
@@ -17,14 +17,14 @@ void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[2
     setCasaMatriz(sucur,casa_matriz);
 }
 
-void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, int casaMatriz)
+void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5])
 {
     strcpy(sucur->codigo,codigo);
     strcpy(sucur->provincia,provincia);
     sucur->cantidad_articulos = articulos;
     sucur->monto_mensual = montoMensual;
     sucur->m_cuadrados = mCuadrados;
-    sucur->casa_matriz=casaMatriz;
+    strcpy(sucur->casa_matriz,casaMatriz);
 }
 
 void destruirSucursal(EstructuraSucursales* sucur)
@@ -77,13 +77,13 @@ void setMCuadrados (EstructuraSucursales* sucur,float NewMetros)
     sucur->m_cuadrados=NewMetros;
 }
 
-int getCasaMatriz(EstructuraSucursales* sucur)
+char *getCasaMatriz(EstructuraSucursales* sucur)
 {
     return sucur->casa_matriz;
 }
-void setCasaMatriz(EstructuraSucursales* sucur, int NewCasaMatriz)
+void setCasaMatriz(EstructuraSucursales* sucur, char NewCasaMatriz[5])
 {
-    sucur->casa_matriz=NewCasaMatriz;
+    strcpy(sucur->casa_matriz,NewCasaMatriz);
 }
 
 void mostrarSucursal (EstructuraSucursales* sucur)
@@ -97,4 +97,5 @@ void mostrarSucursal (EstructuraSucursales* sucur)
     cout<<"Casa Matriz: "<<sucur->casa_matriz<<endl;
     cout<<"\n-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n";
 }
+
 

@@ -131,7 +131,7 @@
 	<string.h>
 	"TDA.h"
 
-1603749469 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
+1603476380 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
 	"ListaSucursales.h"
 	"TDA.h"
 	<iostream>
@@ -140,12 +140,12 @@
 1603476476 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.h
 	"TDA.h"
 
-1603752146 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.h
+1603475802 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1603750195 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
+1603475380 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
 	<iostream>
 	<stdlib.h>
 	<stdio.h>
@@ -155,9 +155,121 @@
 	"ListaSucursales.h"
 	<fstream>
 
-1603749469 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.cpp
+1603475802 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.cpp
 	<iostream>
 	<conio.h>
 	<string.h>
 	"TDA.h"
+
+1603754434 source:c:\users\rolando rapali\desktop\algoritmos-y-estructuras-de-datos\listasucursales.cpp
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<stdlib.h>
+
+1603753990 c:\users\rolando rapali\desktop\algoritmos-y-estructuras-de-datos\listasucursales.h
+	"TDA.h"
+
+1603478803 c:\users\rolando rapali\desktop\algoritmos-y-estructuras-de-datos\tda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1603754061 source:c:\users\rolando rapali\desktop\algoritmos-y-estructuras-de-datos\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"TDA.h"
+	"ListaSucursales.h"
+	<fstream>
+
+1603478803 source:c:\users\rolando rapali\desktop\algoritmos-y-estructuras-de-datos\tda.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+	"TDA.h"
+
+1603920009 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\listasucursales.cpp
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<stdlib.h>
+
+1603920009 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\listasucursales.h
+	"TDA.h"
+
+1603478803 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\tda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1603907794 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"TDA.h"
+	"ListaSucursales.h"
+	"generalidades.h"
+
+1603478803 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\tda.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+	"TDA.h"
+
+1603921545 c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\generalidades.h
+	"ListaSucursales.h"
+	"TDA.h"
+
+1603907162 source:c:\users\rolando rapali\desktop\quini_6\c++\algotimos y estructura de datos\algoritmos-y-estructuras-de-datos\generalidades.cpp
+	"generalidades.h"
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<fstream>
+
+1603937897 source:c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\listasucursales.cpp
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<stdlib.h>
+
+1603937897 c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\listasucursales.h
+	"TDA.h"
+
+1603478803 c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\tda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1603478803 source:c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\tda.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+	"TDA.h"
+
+1603938010 source:c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<conio.h>
+	"TDA.h"
+	"ListaSucursales.h"
+	"generalidades.h"
+
+1603937671 c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\generalidades.h
+	"ListaSucursales.h"
+	"TDA.h"
+
+1603937733 source:c:\users\peqe_\documents\desarrollo react\ultimoalgoritmos-y-estructuras-de-datos\generalidades.cpp
+	"generalidades.h"
+	"ListaSucursales.h"
+	"TDA.h"
+	<iostream>
+	<fstream>
 

@@ -36,6 +36,8 @@
 		<Unit filename="ListaSucursales.h" />
 		<Unit filename="TDA.cpp" />
 		<Unit filename="TDA.h" />
+		<Unit filename="generalidades.cpp" />
+		<Unit filename="generalidades.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

@@ -5,8 +5,6 @@
 
 using namespace std;
 
-int cont = 0;
-
 Listaenc* crearLista()
 {
     Listaenc * lista = new Listaenc();
@@ -17,24 +15,44 @@ Listaenc* crearLista()
     return lista;
 }
 
-int liberarLista(Listaenc* lista)
+void liberarLista(Listaenc* lista)
 {
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-
-    while(!estaVacia(lista))
-        remover(lista, NULL, 0);
-    delete(lista);
+    if(estaInicializado(lista)){
+    while(!estaVacia(lista)) remover(lista, NULL, 0);
+    delete lista;
     lista = NULL;
+    }
+    else{
+        cout<<"no se encuentra inicializada la lista(Liberarlista)"<<endl;
+    }
 }
 
-int estaVacia(Listaenc* lista)
+bool estaInicializado(Listaenc* lista){
+    bool Inicializado = true;
+    if(lista == NULL){
+        Inicializado = false;
+    }
+    return Inicializado;
+}
+
+bool estaInicializado(ListaSucursales* sucursal){
+    bool Inicializado = true;
+    if(sucursal == NULL){
+        Inicializado = false;
+    }
+    return Inicializado;
+}
+
+bool estaVacia(Listaenc* lista)
 {
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    if (lista->inicio == NULL)
-        return TRUE;
-    return FALSE;
+    bool estaVacia = true;
+    if(estaInicializado(lista)){
+    if (!lista->inicio == NULL)
+        estaVacia = false;
+    return estaVacia;
+    }
+    estaVacia = false;
+    return estaVacia;
 }
 
 ListaSucursales* crearSucur(EstructuraSucursales * sucursal,ListaSucursales* proximo)
@@ -47,56 +65,80 @@ ListaSucursales* crearSucur(EstructuraSucursales * sucursal,ListaSucursales* pro
     return nueva_Sucursal;
 }
 
-int insertarInicio(Listaenc* lista,EstructuraSucursales * sucursal)
+void insertarInicio(Listaenc* lista,EstructuraSucursales * sucursal)
 {
-    if(lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    ListaSucursales *nuevoNodo = crearSucur(sucursal,lista->inicio);
-    if(nuevoNodo == NULL)
-        ESTRUCTURA_NO_INICIALIZADA;
-    lista->inicio = nuevoNodo;
-    lista->tam++;
-    return OK;
-}
-
-int insertar(Listaenc* lista,EstructuraSucursales * sucursal, int pos)
-{
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    if (pos < 0 || pos > lista->tam)
-        return INDICE_INVALIDO;
-
-    ListaSucursales *nuevoNo;
-    if (pos == 0)
-    {
-        return insertarInicio(lista, sucursal);
-    }
-    else
-    {
-        // prepara para inserir
-        ListaSucursales *aux;
-        aux = lista->inicio;
-        for(int i = 0; i < pos - 1; i++)
-        {
-            aux = aux->siguiente;
+    if(estaInicializado(lista)){
+        ListaSucursales *nuevoNodo = crearSucur(sucursal,lista->inicio);
+        if(estaInicializado(nuevoNodo)){
+        lista->inicio = nuevoNodo;
+        lista->tam++;
         }
-
-        // adiciona o nó
-        nuevoNo = nuevoNo = crearSucur(sucursal, aux->siguiente);
-        if (nuevoNo == NULL)
-            return ESTRUCTURA_NO_INICIALIZADA;
-        aux->siguiente = nuevoNo;
-    }
-    lista->tam++;
-    return OK;
+        else{
+            cout<<"El nodo es nulo"<<endl;
+            }
+        }
+    else{
+        cout<<"no se encuentra inicializada la lista(InsertarInicio)"<<endl;
+        }
 }
 
-int removerInicio(Listaenc* lista, EstructuraSucursales * sucursal)
+void insertar(Listaenc* nacional,EstructuraSucursales * sucursal, int pos)
 {
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    if (estaVacia(lista))
-        return ESTRUCTURA_VACIA;
+    /*if (pos < 0 || pos > nacional->tam)
+        return INDICE_INVALIDO;*/
+    if((estaInicializado(nacional)) && (!(pos < 0 || pos > nacional->tam))){
+        if (pos == 0)
+        {
+            insertarInicio(nacional, sucursal);
+        }
+        else
+        {
+            // prepara para inserir
+            ListaSucursales *nuevoNodo;///Se crea un nuevo nodo que posee un puntero a la estructura sucursales y un puntero hacia la siguiente ubicacion
+            ListaSucursales *aux;///Se crea un puntero "auxiliar"
+            aux = nacional->inicio;/// el auxiliar es se iguala al inicio que hay actualmente en la lista
+            for(int i = 0; i < pos-1; i++)
+            {
+                aux = aux->siguiente;
+            }
+            // adiciona o nó
+            nuevoNodo = crearSucur(sucursal, aux->siguiente);
+            if (estaInicializado(nuevoNodo)){
+            aux->siguiente = nuevoNodo;
+            nacional->tam++;
+            }
+        //return OK;
+        }
+        }
+    else{
+        cout<<"no se encuentra inicializada la lista(Insertar)"<<endl;
+    }
+}
+/*
+int insertarProvincia(Listaenc* provincial,EstructuraSucursales * sucursal, int pos){
+    ListaSucursales* nuevoNodo;
+    ListaSucursales* aux;
+    nuevoNodo = crearSucur(sucursal, aux->siguiente);
+    if(strcmp(nuevoNodo->sucursales->provincia,"Buenos Aires" == 0)){
+    if(pos == 0){
+        insertarInicio(provincial, sucursal);
+    }
+    aux = provincial->inicio;
+    for(int i = 0;i < pos-1;i++){
+        aux = aux->siguiente;
+    }
+        aux->siguiente = nuevoNodo;
+        provincial->tam++;
+       }
+    else{
+        cout<<"no es el caso"<<endl;
+    }
+
+}
+*/
+void removerInicio(Listaenc* lista, EstructuraSucursales * sucursal)
+{
+    if(estaInicializado(lista) && !(estaVacia(lista))){
     ListaSucursales *aux = lista->inicio;
     if (sucursal != NULL)
         sucursal = aux->sucursales;
@@ -104,60 +146,42 @@ int removerInicio(Listaenc* lista, EstructuraSucursales * sucursal)
     delete aux;
     aux = NULL;
     lista->tam--;
-    return OK;
-
+    }
 }
 
-int remover(Listaenc* lista, EstructuraSucursales * sucursal, int pos)
+void remover(Listaenc* lista, EstructuraSucursales * sucursal, int pos)
 {
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    if (estaVacia(lista))
-        return ESTRUCTURA_VACIA;
-    if (pos < 0 || pos >= lista->tam)
-        return INDICE_INVALIDO;
-
-    ListaSucursales *ant, *atual;
+    if(estaInicializado(lista) && !(estaVacia(lista)) && !(pos < 0 || pos >= lista->tam)){
+    ListaSucursales *anterior, *actual;
     if (pos == 0)
     {
-        return removerInicio(lista, sucursal);
+        removerInicio(lista, sucursal);
     }
     else
     {
         // prepara para remover
-        ant = NULL;
-        atual = lista->inicio;
+        anterior = NULL;
+        actual = lista->inicio;
         for(int i = 0; i < pos; i++)
         {
-            ant = atual;
-            atual = atual->siguiente;
+            anterior = actual;
+            actual = actual->siguiente;
         }
 
-        // remove o nó atual
-        ant->siguiente = atual->siguiente;
+        // remove o nó actual
+        anterior->siguiente = actual->siguiente;
         if (sucursal != NULL)
-            sucursal = atual->sucursales;
-        delete atual;
-        atual = NULL;
+            sucursal = actual->sucursales;
+        delete actual;
+        actual = NULL;
+        lista->tam--;
     }
-    lista->tam--;
-    return OK;
+    }
 }
 
-int obtenerElemento(Listaenc* lista, EstructuraSucursales** sucursal, int pos)
+void obtenerElemento(Listaenc* lista, EstructuraSucursales** sucursal, int pos)
 {
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    if (estaVacia(lista))
-        return ESTRUCTURA_VACIA;
-
-    if (pos < 0 || pos >= lista->tam)
-        return INDICE_INVALIDO;
-
-    if (sucursal== NULL)
-        return PARAMETRO_INVALIDO;
-
-
+    if(estaInicializado(lista) && (!estaVacia(lista) && (!(pos < 0 || pos >= lista->tam))) && (!(sucursal == NULL))){
     ListaSucursales *aux;
     aux = lista->inicio;
     for(int i = 0; i < pos; i++)
@@ -165,23 +189,25 @@ int obtenerElemento(Listaenc* lista, EstructuraSucursales** sucursal, int pos)
         aux = aux->siguiente;
     }
     *sucursal = aux->sucursales;
-
-    return OK;
+    }
+    else{
+        cout<<"no se encuentra inicializada la lista(obtener Elmento)"<<endl;
+    }
 }
 
-int obtenerTamanio(Listaenc* lista, int* tam)
+void obtenerTamanio(Listaenc* lista, int* tam)
 {
-    if (lista == NULL)
-        return ESTRUCTURA_NO_INICIALIZADA;
-    if (tam == NULL)
-        return PARAMETRO_INVALIDO;
+    if((estaInicializado(lista)) && (!(tam == NULL))){
     *tam = lista->tam;
-    return OK;
+    }
+    else{
+        cout<<"no esta inicializado o el tamanio es nulo(Obtener tamanio)"<<endl;
+    }
 }
 
 void imprimir(Listaenc* lista)
 {
-    if(estaVacia(lista))
+    if(lista->inicio==NULL)
     {
         cout<<endl<<"No hay datos cargados"<<endl<<endl;
     }
@@ -203,4 +229,3 @@ void imprimir(Listaenc* lista)
     system ("pause");
     system("cls");
 }
-
