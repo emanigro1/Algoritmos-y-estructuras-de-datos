@@ -24,10 +24,9 @@ using namespace std;
 
 int main()
 {
+    /// Declaracion e inicializacion de variables
     int opcion;
-
     Listaenc* miLista = crearLista();
-    //Listaenc* provincial = crearLista();
 
     do
     {
@@ -102,7 +101,6 @@ int main()
             break;
 
         case 0:
-            //exit;
             system("cls");
             cout<<"\Hasta luego!!\n";
             liberarLista(miLista);

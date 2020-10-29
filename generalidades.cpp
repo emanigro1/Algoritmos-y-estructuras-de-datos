@@ -79,7 +79,7 @@ void cargarDatos(Listaenc* miLista)
     system("cls");
 
 }
-
+/*------------------------------------------------------------------------------------*/
 void ordenarNacionalFacturacion(Listaenc* miLista)
 {
     if(estaVacia(miLista))
@@ -119,7 +119,7 @@ void ordenarNacionalFacturacion(Listaenc* miLista)
     system ("pause");
     system("cls");
 }
-
+/*------------------------------------------------------------------------------------*/
 void ordenarProvinciaFacturacion(Listaenc* miLista)
 {
     if(estaVacia(miLista))
@@ -176,7 +176,7 @@ void ordenarProvinciaFacturacion(Listaenc* miLista)
     system ("pause");
     system("cls");
 }
-
+/*------------------------------------------------------------------------------------*/
 void ordenarProvinciaCantArt(Listaenc* miLista)
 {
     if(miLista->inicio==NULL)
@@ -231,7 +231,7 @@ void ordenarProvinciaCantArt(Listaenc* miLista)
     system ("pause");
     system("cls");
 }
-
+/*------------------------------------------------------------------------------------*/
 void ordenarNacionalCantArt(Listaenc* miLista)
 {
     if(miLista->inicio==NULL)
@@ -272,7 +272,7 @@ void ordenarNacionalCantArt(Listaenc* miLista)
     system ("pause");
     system("cls");
 }
-
+/*------------------------------------------------------------------------------------*/
 void ordenarPorRendimiento(Listaenc* miLista)
 {
     if(estaVacia(miLista))
@@ -353,3 +353,4 @@ void ordenarPorRendimiento(Listaenc* miLista)
     system ("pause");
     system("cls");
 }
+/*------------------------------------------------------------------------------------*/

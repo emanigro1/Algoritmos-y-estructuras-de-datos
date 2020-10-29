@@ -7,95 +7,96 @@ using namespace std;
 
 struct EstructuraSucursales;
 
-void crearSucursal (EstructuraSucursales* sucur,char codigo[5], char Provincia[20],int Articulos, float MontoMensual, float mCuadrados, char casa_matriz[5])
-{
-    setCodigo(sucur,codigo);
-    setProvincia(sucur,Provincia);
-    setCantidadArticulos(sucur,Articulos);
-    setMontoMensual(sucur,MontoMensual);
-    setMCuadrados(sucur,mCuadrados);
-    setCasaMatriz(sucur,casa_matriz);
-}
+/*******************************************************************/
+/**  Implementacion de Primitivas      */
+/**-----------------------------------*/
 
-void nuevoSucursal(EstructuraSucursales *sucur,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5])
-{
-    strcpy(sucur->codigo,codigo);
-    strcpy(sucur->provincia,provincia);
-    sucur->cantidad_articulos = articulos;
-    sucur->monto_mensual = montoMensual;
-    sucur->m_cuadrados = mCuadrados;
-    strcpy(sucur->casa_matriz,casaMatriz);
-}
 
-void destruirSucursal(EstructuraSucursales* sucur)
+void nuevoSucursal(EstructuraSucursales *sucursal,char codigo[5], char provincia[20],int articulos, float montoMensual, float mCuadrados, char casaMatriz[5])
 {
-    delete sucur;
+    strcpy(sucursal->codigo,codigo);
+    strcpy(sucursal->provincia,provincia);
+    sucursal->cantidad_articulos = articulos;
+    sucursal->monto_mensual = montoMensual;
+    sucursal->m_cuadrados = mCuadrados;
+    strcpy(sucursal->casa_matriz,casaMatriz);
 }
-
-char *getCodigo (EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void destruirSucursal(EstructuraSucursales* sucursal)
 {
-   return sucur->codigo;
+    delete sucursal;
 }
-void setCodigo (EstructuraSucursales* sucur, char NewCodigo[5])
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+char *getCodigo (EstructuraSucursales* sucursal)
 {
-    strcpy(sucur->codigo,NewCodigo);
+   return sucursal->codigo;
 }
-
-char *getProvincia (EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void setCodigo (EstructuraSucursales* sucursal, char NewCodigo[5])
 {
-    return sucur->provincia;
+    strcpy(sucursal->codigo,NewCodigo);
 }
-void setProvincia(EstructuraSucursales* sucur,char NewProvincia[20])
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+char *getProvincia (EstructuraSucursales* sucursal)
 {
-    strcpy(sucur->provincia,NewProvincia);
+    return sucursal->provincia;
 }
-
-int getCantidadArticulos(EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void setProvincia(EstructuraSucursales* sucursal,char NewProvincia[20])
 {
-    return sucur->cantidad_articulos;
+    strcpy(sucursal->provincia,NewProvincia);
 }
-void setCantidadArticulos(EstructuraSucursales* sucur, int NewCantidad)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+int getCantidadArticulos(EstructuraSucursales* sucursal)
 {
-    sucur->cantidad_articulos=NewCantidad;
+    return sucursal->cantidad_articulos;
 }
-
-float getMontoMensual(EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void setCantidadArticulos(EstructuraSucursales* sucursal, int NewCantidad)
 {
-    return sucur->monto_mensual;
+    sucursal->cantidad_articulos=NewCantidad;
 }
-void setMontoMensual (EstructuraSucursales* sucur, float NewMontoMensual)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+float getMontoMensual(EstructuraSucursales* sucursal)
 {
-    sucur->monto_mensual=NewMontoMensual;
+    return sucursal->monto_mensual;
 }
-
-float getMCuadrados(EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void setMontoMensual (EstructuraSucursales* sucursal, float NewMontoMensual)
 {
-    return sucur->m_cuadrados;
+    sucursal->monto_mensual=NewMontoMensual;
 }
-void setMCuadrados (EstructuraSucursales* sucur,float NewMetros)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+float getMCuadrados(EstructuraSucursales* sucursal)
 {
-    sucur->m_cuadrados=NewMetros;
+    return sucursal->m_cuadrados;
 }
-
-char *getCasaMatriz(EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void setMCuadrados (EstructuraSucursales* sucursal,float NewMetros)
 {
-    return sucur->casa_matriz;
+    sucursal->m_cuadrados=NewMetros;
 }
-void setCasaMatriz(EstructuraSucursales* sucur, char NewCasaMatriz[5])
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+char *getCasaMatriz(EstructuraSucursales* sucursal)
 {
-    strcpy(sucur->casa_matriz,NewCasaMatriz);
+    return sucursal->casa_matriz;
 }
-
-void mostrarSucursal (EstructuraSucursales* sucur)
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void setCasaMatriz(EstructuraSucursales* sucursal, char NewCasaMatriz[5])
+{
+    strcpy(sucursal->casa_matriz,NewCasaMatriz);
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
+void mostrarSucursal (EstructuraSucursales* sucursal)
 {
     cout<<"\n-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n";
-    cout<<"Codigo Sucursal: "<<sucur->codigo<<endl;
-    cout<<"Provincia: "<<sucur->provincia<<endl;
-    cout<<"Cantidad de Articulos Vendidos: "<<sucur->cantidad_articulos<<endl;
-    cout<<"Monto Mensual: "<<sucur->monto_mensual<<endl;
-    cout<<"M2 del Local: "<<sucur->m_cuadrados<<endl;
-    cout<<"Casa Matriz: "<<sucur->casa_matriz<<endl;
+    cout<<"Codigo sucursal: "<<sucursal->codigo<<endl;
+    cout<<"Provincia: "<<sucursal->provincia<<endl;
+    cout<<"Cantidad de Articulos Vendidos: "<<sucursal->cantidad_articulos<<endl;
+    cout<<"Monto Mensual: "<<sucursal->monto_mensual<<endl;
+    cout<<"M2 del Local: "<<sucursal->m_cuadrados<<endl;
+    cout<<"Casa Matriz: "<<sucursal->casa_matriz<<endl;
     cout<<"\n-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n";
 }
-
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
