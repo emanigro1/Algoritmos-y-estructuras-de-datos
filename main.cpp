@@ -24,7 +24,7 @@ using namespace std;
 
 int main()
 {
-  int opcion;
+    int opcion;
 
     Listaenc* miLista = crearLista();
     //Listaenc* provincial = crearLista();
@@ -35,7 +35,8 @@ int main()
         cout<<"Elija un numero de opcion:\n\n" ;
         cout<<"1. Listar por facturacion.\n";
         cout<<"2. Ranking cantidad articulos vendidos.\n";
-        cout<<"3. Mostrar sucursales.\n";
+        cout<<"3. Rendimiento.\n";
+        cout<<"4. Mostrar sucursales.\n";
         cout<<"6. Cargar datos del txt.\n\n";
         cout<<"0. Salir\n\n";
 
@@ -63,10 +64,11 @@ int main()
                 break;
             }
             else
-            {  system("cls");
+            {
+                system("cls");
                 break;
             }
-    case 2:
+        case 2:
 
             cout<<endl<<"1. Nacional"<<endl;
             cout<<"2. Provincial"<<endl;
@@ -85,15 +87,15 @@ int main()
                 break;
             }
             else
-            {  system("cls");
+            {
+                system("cls");
                 break;
             }
-
         case 3:
-            imprimir(miLista);
+            ordenarPorRendimiento(miLista);
             break;
         case 4:
-          ordenarPorRendimiento(miLista);
+            imprimir(miLista);
             break;
         case 6:
             cargarDatos(miLista);

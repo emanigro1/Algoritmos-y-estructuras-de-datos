@@ -114,28 +114,7 @@ void insertar(Listaenc* nacional,EstructuraSucursales * sucursal, int pos)
         cout<<"no se encuentra inicializada la lista(Insertar)"<<endl;
     }
 }
-/*
-int insertarProvincia(Listaenc* provincial,EstructuraSucursales * sucursal, int pos){
-    ListaSucursales* nuevoNodo;
-    ListaSucursales* aux;
-    nuevoNodo = crearSucur(sucursal, aux->siguiente);
-    if(strcmp(nuevoNodo->sucursales->provincia,"Buenos Aires" == 0)){
-    if(pos == 0){
-        insertarInicio(provincial, sucursal);
-    }
-    aux = provincial->inicio;
-    for(int i = 0;i < pos-1;i++){
-        aux = aux->siguiente;
-    }
-        aux->siguiente = nuevoNodo;
-        provincial->tam++;
-       }
-    else{
-        cout<<"no es el caso"<<endl;
-    }
 
-}
-*/
 void removerInicio(Listaenc* lista, EstructuraSucursales * sucursal)
 {
     if(estaInicializado(lista) && !(estaVacia(lista))){

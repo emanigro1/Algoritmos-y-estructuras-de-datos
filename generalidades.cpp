@@ -20,7 +20,6 @@ void cargarDatos(Listaenc* miLista)
         int articulos,n;
         float montoMensual,metrosCuadrados;
         char provincia[20],numeroCasaMatriz[5],codigo[5];
-        //char CasaAux[50],CodAux[50];
         int posicion = 0;
         ///
 
@@ -153,9 +152,10 @@ void ordenarProvinciaFacturacion(Listaenc* miLista)
             }
         }
         float totalProvincias;
+        bool encontrado;
         for(i=0; i<23; i++)
         {
-            cout<<endl<<provincias[i]<<": "<<endl;
+            encontrado=false;
             totalProvincias=0;
             for(j=0; j<tamanioLista; j++)
             {
@@ -163,9 +163,14 @@ void ordenarProvinciaFacturacion(Listaenc* miLista)
                 {
                     mostrarSucursal(sucursal[j]);
                     totalProvincias+=sucursal[j]->monto_mensual;
+                    encontrado=true;
                 }
             }
-            cout<<endl<<"Total: "<<totalProvincias<<endl<<"___________________________________________"<<endl;
+            if(encontrado)
+            {
+
+                cout<<endl<<provincias[i]<<" - "<<"Total: "<<totalProvincias<<endl<<"___________________________________________"<<endl;
+            }
         }
     }
     system ("pause");
@@ -204,18 +209,23 @@ void ordenarProvinciaCantArt(Listaenc* miLista)
             }
         }
         float totalProvincias;
+        bool encontrado;
         for(i=0; i<23; i++)
         {
-            cout<<endl<<provincias[i]<<": "<<endl;
-
+            encontrado=false;
             for(j=0; j<tamanioLista; j++)
             {
                 if(strcmp(provincias[i], sucursal[j]->provincia)==0)
                 {
                     mostrarSucursal(sucursal[j]);
+                    encontrado=true;
                 }
             }
-            cout<<endl<<"___________________________________________"<<endl;
+            if(encontrado)
+            {
+                cout<<endl<<provincias[i];
+                cout<<endl<<"___________________________________________"<<endl;
+            }
         }
     }
     system ("pause");
@@ -277,7 +287,7 @@ void ordenarPorRendimiento(Listaenc* miLista)
         EstructuraSucursales* auxiliar;
         EstructuraSucursales* sucursal[tamanioLista];
         Rendimiento rendimientoFranquicia[tamanioLista],aux;
-        int cant=0;
+
         for(i=0; i<tamanioLista; i++)
         {
             obtenerElemento(miLista,&sucursal[i],i);
@@ -296,7 +306,6 @@ void ordenarPorRendimiento(Listaenc* miLista)
             {
                 strcpy(rendimientoFranquicia[i].codSuc,sucursal[i]->codigo);
                 rendimientoFranquicia[i].rendimiento=rendimiento;
-                cant++;
             }
             else
             {
@@ -313,7 +322,6 @@ void ordenarPorRendimiento(Listaenc* miLista)
                 {
                     strcpy(rendimientoFranquicia[i].casaMatriz,sucursal[i]->casa_matriz);
                     rendimientoFranquicia[i].rendimiento=rendimiento;
-                    cant++;
                 }
             }
         }
@@ -333,15 +341,14 @@ void ordenarPorRendimiento(Listaenc* miLista)
                 if(strcmp(rendimientoFranquicia[i].codSuc, sucursal[j]->codigo)==0||strcmp(rendimientoFranquicia[i].casaMatriz,sucursal[j]->casa_matriz)==0 && strcmp(sucursal[j]->casa_matriz,"0000")!=0)
                 {
                     mostrarSucursal(sucursal[j]);
-
                 }
-
             }
-            cout<<endl<<"Rendimiento: "<<rendimientoFranquicia[i].rendimiento;
-            cout<<endl<<"___________________________________________"<<endl;
+            if(rendimientoFranquicia[i].rendimiento!=0)
+            {
+                cout<<endl<<"Rendimiento: "<<rendimientoFranquicia[i].rendimiento;
+                cout<<endl<<"___________________________________________"<<endl;
+            }
         }
-
-
     }
     system ("pause");
     system("cls");
