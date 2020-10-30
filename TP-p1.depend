@@ -131,21 +131,21 @@
 	<string.h>
 	"TDA.h"
 
-1603942833 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
+1604067149 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.cpp
 	"ListaSucursales.h"
 	"TDA.h"
 	<iostream>
 	<stdlib.h>
 
-1603942833 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.h
+1604067149 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\listasucursales.h
 	"TDA.h"
 
-1603942833 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.h
+1604067149 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1603942971 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
+1604067149 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\main.cpp
 	<iostream>
 	<stdlib.h>
 	<stdio.h>
@@ -155,7 +155,7 @@
 	"ListaSucursales.h"
 	"generalidades.h"
 
-1603942833 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.cpp
+1604067149 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\tda.cpp
 	<iostream>
 	<conio.h>
 	<string.h>
@@ -273,14 +273,14 @@
 	<iostream>
 	<fstream>
 
-1603949913 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\generalidades.cpp
+1604067149 source:c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\generalidades.cpp
 	"generalidades.h"
 	"ListaSucursales.h"
 	"TDA.h"
 	<iostream>
 	<fstream>
 
-1603948590 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\generalidades.h
+1604067149 c:\users\peqe_\desktop\ranking-de-franquicias1\algoritmos-y-estructuras-de-datos\generalidades.h
 	"ListaSucursales.h"
 	"TDA.h"
 

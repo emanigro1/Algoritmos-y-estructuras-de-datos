@@ -96,6 +96,8 @@ void ordenarNacionalFacturacion(Listaenc* miLista)
         {
             obtenerElemento(miLista,&sucursal[i],i);
         }
+        cout<<"Ranking Nacional de facturacion"<<endl;
+        cout<<"_______________________________"<<endl;
 
         for(i=0; i<tamanioLista; i++)
         {
@@ -136,6 +138,8 @@ void ordenarProvinciaFacturacion(Listaenc* miLista)
         {
             obtenerElemento(miLista,&sucursal[i],i);
         }
+        cout<<"Ranking Provincial de facturacion"<<endl;
+        cout<<"_________________________________"<<endl;
 
         for(i=0; i<tamanioLista; i++)
         {
@@ -193,7 +197,8 @@ void ordenarProvinciaCantArt(Listaenc* miLista)
         {
             obtenerElemento(miLista,&sucursal[i],i);
         }
-
+        cout<<"Ranking Provincial de cantidad de articulos"<<endl;
+        cout<<"___________________________________________"<<endl;
         for(i=0; i<tamanioLista; i++)
         {
             for(j=0; j<tamanioLista; j++)
@@ -249,6 +254,8 @@ void ordenarNacionalCantArt(Listaenc* miLista)
         {
             obtenerElemento(miLista,&sucursal[i],i);
         }
+        cout<<"Ranking Nacional de cantidad de articulos"<<endl;
+        cout<<"_________________________________________"<<endl;
 
         for(i=0; i<tamanioLista; i++)
         {
